@@ -897,6 +897,12 @@ class GRPOTrainer(Trainer):
                     prompt_ids,
                     attention_mask=prompt_mask,
                     # generation_config=self.generation_config,
+                    pad_token_id=self.processing_class.pad_token_id,
+                    eos_token_id=self.processing_class.eos_token_id,
+                    forced_eos_token_id=self.processing_class.eos_token_id,
+                    early_stopping=False,
+                    temperature=0.7,
+                    num_return_sequences=1,
                     max_new_tokens=self.max_completion_length,
                 )
 
