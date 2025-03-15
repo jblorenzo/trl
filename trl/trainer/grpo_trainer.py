@@ -896,7 +896,7 @@ class GRPOTrainer(Trainer):
                 prompt_completion_ids = unwrapped_model.generate(
                     prompt_ids,
                     attention_mask=prompt_mask,
-                    generation_config=self.generation_config,
+                    # generation_config=self.generation_config,
                     max_new_tokens=self.max_completion_length,
                 )
 
